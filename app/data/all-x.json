@@ -1,0 +1,30 @@
+[{
+    "pic": "/images/jeans1.jpg",
+    "name": "HRX Indigo Blue Jeans",
+    "price":"1999",
+    "desc":"fvdfdgd",
+    "url":"sdfs"
+}, {
+  "pic": "/images/jeans2.jpg",
+    "name": "Roadster Navy Blue Jeans",
+    "price":"1499",
+    "desc":"sdfs",
+    "url":"sdfsdf"
+},
+{
+  "pic": "/images/jeans3.jpg",
+    "name": "Bandit Shorts",
+    "price":"1299",
+    "desc":"Stress less, distress more. The Bandit Shorts have distress detailing, cuffed hems, and five-pocket design. Not to mention a seriously sexy fit to help you show some leg. Perfect thing for getting noticed on a casual day cruising around, or to throw over tights and a plaid sweater during the chilly months. By One Teaspoon.",
+    "url":"sdf"
+    
+},
+{
+  "pic": "/images/jeans4.jpg",
+    "name": "Skinny Jeans",
+    "price":"5249",
+    "desc":"You're going to want to wear these black UNIF skinnies with literally everything.They have distressing at knees, exposed yellow stitching, and the classic 5-pocket style. Zip/button closure at front. Throw them on with a tissue-thin tee, leather jacket, and boots. Perfect for early mornings or late nights.",
+    "url":"sdf"
+    
+}
+ ]

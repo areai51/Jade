@@ -1,0 +1,72 @@
+[
+    {
+        "pic": "/images/jeans1.jpg",
+        "name": "HRX Indigo Blue Jeans",
+        "price": "1999",
+        "desc": "fvdfdgd",
+        "url": "http://www.nastygal.com/search?q=HRX+Indigo+Blue+Jeans"
+    },
+    {
+        "pic": "/images/jeans2.jpg",
+        "name": "Roadster Navy Blue Jeans",
+        "price": "1499",
+        "desc": "",
+        "url": "http://www.nastygal.com/search?q=Roadster+Navy+Blue+Jeans"
+    },
+    {
+        "pic": "/images/jeans3.jpg",
+        "name": "Bandit Shorts",
+        "price": "1299",
+        "desc": "Stress less, distress more. The Bandit Shorts have distress detailing, cuffed hems, and five-pocket design. Not to mention a seriously sexy fit to help you show some leg. Perfect thing for getting noticed on a casual day cruising around, or to throw over tights and a plaid sweater during the chilly months. By One Teaspoon.",
+        "url": "http://www.nastygal.com/search?q=Bandit+Shorts"
+    },
+    {
+        "pic": "/images/jeans4.jpg",
+        "name": "Skinny Jeans",
+        "price": "5249",
+        "desc": "You're going to want to wear these black UNIF skinnies with literally everything.They have distressing at knees, exposed yellow stitching, and the classic 5-pocket style. Zip/button closure at front. Throw them on with a tissue-thin tee, leather jacket, and boots. Perfect for early mornings or late nights.",
+        "url": "http://www.nastygal.com/search?q=skinny+jeans"
+    },
+    {
+        "pic": "/images/jeans5.jpg",
+        "name": "The Short Fuse Shortalls",
+        "price": "7342 ",
+        "desc": "We’re not about fitting in—until it comes to denim. Our vintage-inspired Nasty Gal Denim Collection is all about custom washes, perfect fits, and making your butt look good. The Short Fuse Shortalls are made in black denim and feature fade detail, five-pocket design, and brushed silver hardware. Adjustable straps, cuffed hems. We love it with slide sneakers and a bandeau bra top.",
+        "url": "http://www.nastygal.com/product/nasty-gal-denim--the-short-fuse-shortalls"
+    },
+    {
+        "pic": "/images/jeans6.jpg",
+        "name": "The Kink Skinny in Sabbath Black",
+        "price": "5476 ",
+        "desc": "We’re not about fitting in—until it comes to denim. Our vintage-inspired Nasty Gal Denim Collection is all about custom washes, perfect fits, and making your butt look good. These black skinnies are the jeans that'll keep you coming back for more. Besides hugging every one of your curves, they feature a high rise, the classic 5-pocket style, zip/black button closures at front, and gunmetal hardware. Also available in medium and dark washes. We're kinky like that. Made in LA.",
+        "url": "http://www.nastygal.com/product/nasty-gal-the-kink-jean--sabbath-black"
+    },
+    {
+        "pic": "/images/jeans7.jpg",
+        "name": "What The Bell",
+        "price": "6099",
+        "desc": "We’re not about fitting in—until it comes to denim. Our vintage-inspired Nasty Gal Denim Collection is all about custom washes, perfect fits, and making your butt look good. These black skinnies are the jeans that'll keep you coming back for more. Besides hugging every one of your curves, they feature a high rise, the classic 5-pocket style, zip/black button closures at front, and gunmetal hardware. Also available in medium and dark washes. We're kinky like that. Made in LA.",
+        "url": "http://www.nastygal.com/clothes-bottoms-denim/nasty-gal-the-bell-jean"
+    },
+    {
+        "pic": "/images/jeans8.jpg",
+        "name": "The Raise Bell",
+        "price": "7342",
+        "desc": "We’re not about fitting in—until it comes to denim. Our vintage-inspired Nasty Gal Denim Collection is all about custom washes, perfect fits, and making your butt look good. These black skinnies are the jeans that'll keep you coming back for more. Besides hugging every one of your curves, they feature a high rise, the classic 5-pocket style, zip/black button closures at front, and gunmetal hardware. Also available in medium and dark washes. We're kinky like that. Made in LA.",
+        "url": "http://www.nastygal.com/clothes-bottoms-denim/nasty-gal-the-bell-jean"
+    },
+    {
+        "pic": "/images/jeans9.jpg",
+        "name": "UNIF Cassidy Cropped Flare Jean",
+        "price": "7900",
+        "desc": "Talk about short notice. The Cassidy Jean is made in a faded blue denim and features four-pocket design, frayed hemlines, and a cropped flare silhouette. Front zip fly, custom hardware. We love it with an off-the-shoulder sweater or a tissue-thin tee. By UNIF.",
+        "url": "http://www.nastygal.com/clothes-bottoms-denim/unif-cassidy-cropped-flare-jean"
+    },
+    {
+        "pic": "/images/jeans10.jpg",
+        "name": "UNIF Push Distressed Jeans",
+        "price": "7342",
+        "desc": "When push comes to shove, you're gonna want these jeans. The Push Jeans are white and have a skinny silhouette with high rise, rip detail at knees, and five pocket design. Front zip closure. They're a classic that kill it with just about anything, but we love them teamed up with a vintage rocker tee and cat-eye shades. By UNIF.",
+        "url": "http://www.nastygal.com/product/unif-push-distressed-jeans"
+    }
+]

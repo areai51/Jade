@@ -1,0 +1,29 @@
+[{
+    "pic": "/images/bag1.png",
+    "name": "Umbrella coated tech Wallet",
+    "price":"599",
+    "desc":"Umbrellas never looked this colorful and inviting as they do on your brand new tech wallet. Get it today!"
+}, {
+  "pic": "/images/bag2.png",
+    "name": "Colorful Faces of India",
+    "price":"995",
+    "desc":"A little chaos and a lot of color is what the Faces Tote Bag is all about. Try on an interesting new look with this brand new tote bag. "
+},
+{
+  "pic": "/images/bag4.png",
+    "name": "Fox in Garden Cross Body Sling",
+    "price":"1295",
+    "desc":"The super popular fox in the garden is now on your gorgeous new cross body sling bag. Carry them everywhere you go! "
+},
+ {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mirfanqureshi/128.jpg",
+    "isFavorite": true,
+    "name": "Adelbert Homenick"
+}, {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/petebernardo/128.jpg",
+    "isInCircles": true,
+    "name": "Aida Ferry DVM"
+}, {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mymyboy/128.jpg",
+    "name": "Alden Windler PhD"
+}]

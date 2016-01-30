@@ -1,0 +1,125 @@
+<link rel="import" href="../master-page/master-page.html">
+
+<polymer-element name="product-details" extends="master-page" attributes="contactId contacts" layout vertical>
+  <template>
+    <link rel="stylesheet" href="product-details.css">
+
+    <!--
+    On larger screens, change the behavior of the header panel so it doesn't
+    scroll away or do the condenses feature. Instead, treat its content like
+    a regular toolbar.
+    -->
+
+
+    <core-scroll-header-panel id="scrollHeaderPanel"
+                              condenses?="{{isMobile}}"
+                              fixed?="{{!isMobile}}"
+                              flex>
+
+      <core-toolbar class="{{ {tall: isMobile} | tokenList}}">
+        <a href="/" on-click="{{goBack}}">
+          <paper-icon-button icon="arrow-back"></paper-icon-button>
+        </a>
+        <div id="title" class="bottom indent">{{contacts[contactId].name}}</div>
+      </core-toolbar>
+      <div content flex>
+<div>
+        <div class="card-header" hidden?="{{isMobile}}">
+
+            <core-image src="{{productDetails.pic}}" preload sizing="cover">
+            </core-image>
+
+
+        </div>
+<div class="group-block">
+
+
+        <div class="group">
+   {{productDetails.desc}}
+   <br/>
+   <h4>Rs.{{productDetails.price}}</h4>
+        </div>
+
+        <div class="group">
+          <h3>Material & Care</h3>
+        <ul>
+          <li>Polyester/Spandex</li>
+          <li>Runs true to size</li>
+          <li>Model is wearing smallest size available</li>
+          <li>Hand wash cold</li>
+          <li>Imported</li>
+
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Returns Policy</h3>
+      <p>
+
+       If you're not utterly obsessed with your recent purchase, it's now so easy to send it back! All US returns can be completed online using our fast, hassle-free system. Check out the links below for more details.
+     </p>
+     <br/>
+     <button class="buy-now">Buy Now</button>
+    </div>
+          <div class="group">
+        
+      <p>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<br/>
+     </p>
+     <br/>
+     
+    </div>
+  </div>
+
+
+
+      </div>
+    </core-scroll-header-panel>
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      domReady: function() {
+        // custom transformation: scale header's title
+        var titleStyle = this.$.title.style;
+        document.addEventListener('core-header-transform', function(e) {
+          var d = e.detail;
+          var m = d.height - d.condensedHeight;
+          var scale = Math.max(0.55, (m - d.y) / (m / 0.25) + 0.55);
+          titleStyle.transform = titleStyle.webkitTransform =
+            'scale(' + scale + ') translateZ(0)';
+        });
+      },
+      willPrepare: function() {
+        this.super();
+
+        // Measure the core-scroll-header-panel, otherwise its height will
+        // be messed up
+        this.$.scrollHeaderPanel.measureHeaderHeight();
+
+        // Reset the scroller so every time the user comes to the info page
+        // so they see the full profile photo
+        this.$.scrollHeaderPanel.scroller.scrollTop = 0;
+      },
+      contactIdChanged: function(oldVal, newVal) {
+        this.productDetails = this.contacts[newVal];
+
+        if (this.largeScreen) return;
+
+        // Update the core-scroll-header-panel's background image with the
+        // user's avatar if we're on a small screen
+        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.productDetails.pic+') 0 / cover no-repeat';
+      }
+    });
+  })();
+  </script>
+</polymer-element>

@@ -1,0 +1,67 @@
+<link rel="import" href="../common-elements.html">
+<link rel="import" href="../../bower_components/core-menu/core-menu.html">
+<link rel="import" href="../../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../../bower_components/paper-dropdown/paper-dropdown.html">
+
+
+<polymer-element name="master-page" attributes="">
+
+<template>
+
+
+    <core-media-query query="max-width: 640px" queryMatches="{{isMobile}}">
+    </core-media-query>
+<fsg-navbar>
+  <div class="logo bottom">
+    <a href="#">
+      <img src="/images/jade-logo.png">
+    </a>
+  </div>
+  <a href="/apparel/jeans" on-click="{{navigate}}">Jeans</a>
+  <a href="/apparel/dresses" on-click="{{navigate}}">Dresses</a>
+  <a href="/apparel/sweaters" on-click="{{navigate}}">Sweaters</a>
+</fsg-navbar>
+
+
+</template>
+
+
+
+  <script>
+    (function () {
+
+      Polymer({
+        // `willPrepare` is called by app.js when the
+        // core-animated-pages begins its
+        // 'core-animated-pages-transition-prepare' event.
+        // At this point the element is no longer display: none;
+        // so if you need to do anything with height in JavaScript
+        // this is the time to do it :)
+        willPrepare: function() {
+        },
+
+        // `navigate` is called in response to someone clicking on
+        // an anchor tag. The normal click behavior is stopped to
+        // prevent a page refresh, and the href is sent to the router
+        // so it can change the current route
+        navigate: function(e, detail, sender) {
+          console.log('navigate')
+          e.preventDefault();
+          this.fire('change-route', sender.href);
+        },
+        goBack: function(e) {
+          e.preventDefault();
+          this.fire('change-route-back');
+        }
+
+        // closeDrawer: function() {
+        //   // Maybe this could wait till the next frame before animating
+        //   // out... right now it animates while the list is rebuilding
+        //   // and causes some jank
+        //   this.$.drawerPanel.closeDrawer();
+    //    }
+      });
+
+    })();
+  </script>
+</polymer-element>

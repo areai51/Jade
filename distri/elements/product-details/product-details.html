@@ -1,0 +1,86 @@
+<link rel="import" href="../base-page/base-page.html">
+
+<polymer-element name="product-details" extends="base-page" attributes="contactId contacts" layout vertical>
+  <template>
+    <link rel="stylesheet" href="product-details.css">
+
+    <!--
+    On larger screens, change the behavior of the header panel so it doesn't
+    scroll away or do the condenses feature. Instead, treat its content like
+    a regular toolbar.
+    -->
+    <core-media-query query="min-width: 640px" queryMatches="{{largeScreen}}">
+    </core-media-query>
+
+    <core-scroll-header-panel id="scrollHeaderPanel"
+                              condenses?="{{!largeScreen}}"
+                              fixed?="{{largeScreen}}"
+                              flex>
+
+      <core-toolbar class="{{ {tall} | tokenList}}">
+        <a href="/" on-click="{{goBack}}">
+          <paper-icon-button icon="arrow-back"></paper-icon-button>
+        </a>
+
+      </core-toolbar>
+
+    </core-scroll-header-panel>
+    <div>
+      <div class="card-header" >
+        <core-image src="{{prodInfo.pic}}" preload sizing="cover">
+        </core-image>
+
+        <div>
+
+          <div class="card-name">{{prodInfo.name}}</div>
+        </div>
+
+      </div>
+      <div>{{prodInfo.desc}}</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <button>Add to Cart</button>
+
+    </div>
+
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      domReady: function() {
+        // custom transformation: scale header's title
+        var titleStyle = this.$.title.style;
+        document.addEventListener('core-header-transform', function(e) {
+          var d = e.detail;
+          var m = d.height - d.condensedHeight;
+          var scale = Math.max(0.55, (m - d.y) / (m / 0.25) + 0.55);
+          titleStyle.transform = titleStyle.webkitTransform =
+            'scale(' + scale + ') translateZ(0)';
+        });
+      },
+      willPrepare: function() {
+        this.super();
+
+        // Measure the core-scroll-header-panel, otherwise its height will
+        // be messed up
+        this.$.scrollHeaderPanel.measureHeaderHeight();
+
+        // Reset the scroller so every time the user comes to the info page
+        // so they see the full profile photo
+        this.$.scrollHeaderPanel.scroller.scrollTop = 0;
+      },
+      contactIdChanged: function(oldVal, newVal) {
+        this.prodInfo = this.contacts[newVal];
+
+        if (this.largeScreen) return;
+
+        // Update the core-scroll-header-panel's background image with the
+        // user's avatar if we're on a small screen
+        this.$.scrollHeaderPanel.$.headerBg.style.background = 'url('+this.prodInfo.pic+') 0 / cover no-repeat';
+      }
+    });
+  })();
+  </script>
+</polymer-element>

@@ -1,0 +1,29 @@
+@import '../styles/base';
+
+core-image{
+	width:220px;
+	height: 220px;
+}
+
+.prod-list-item{
+	width:250px;
+	padding: 5px;
+	border:thin solid #ccc;
+	float: left;
+	margin: 5px;
+}
+
+.prod-list-item h3{
+	color:#555;
+}
+.prod-list-item h3:hover{
+	color:#060;
+}
+.container, core-list{
+	width:95%;
+	margin: 0 0 15px 0;
+	min-height:1024px;
+	// background: #e2e;
+
+	// margin:50 auto 0!important;
+}

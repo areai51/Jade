@@ -1,0 +1,101 @@
+<link rel="import" href="../base-page/base-page.html">
+<link rel="import" href="../../bower_components/core-list/core-list.html">
+
+<polymer-element name="product-listing" extends="base-page"
+                 attributes="contacts heading">
+  <template>
+    <link rel="stylesheet" href="product-listing.css">
+
+    <core-drawer-panel id="drawerPanel" forceNarrow>
+    <core-header-panel drawer mode="seamed">
+    <core-toolbar>Menu</core-toolbar>
+
+
+
+    <core-menu selected="0" on-core-select="{{closeDrawer}}">
+      <paper-item noink>
+        <a href="/accessories/jeans" on-click="{{navigate}}">
+          Jeans
+        </a>
+      </paper-item>
+      <paper-item noink>
+        <a href="/accessories/bags" on-click="{{navigate}}">
+          Bags
+        </a>
+      </paper-item>
+      <paper-item noink>
+        <a href="/contacts/circles" on-click="{{navigate}}">
+          Circles
+        </a>
+      </paper-item>
+    </core-menu>
+  </core-header-panel>
+    <!-- Drawer -->
+
+
+    <!-- Main -->
+    <div main layout vertical>
+      <core-header-panel id="headerPanel" mode="seamed" flex>
+        <core-toolbar>
+          <paper-icon-button icon="menu" core-drawer-toggle>
+          </paper-icon-button>
+          <div id="title" flex>{{heading}}</div>
+
+          <paper-menu-button id="menuBtn" noink>
+            <paper-icon-button icon="more-vert" noink></paper-icon-button>
+            <paper-dropdown class="dropdown" halign="right">
+              <core-menu class="menu">
+                <paper-item>Settings</paper-item>
+                <paper-item>Help</paper-item>
+                <paper-item>Feedback</paper-item>
+              </core-menu>
+            </paper-dropdown>
+          </paper-menu-button>
+
+        </core-toolbar>
+
+
+
+    <div class="content">
+      <core-list id="list" data="{{contacts}}"
+                           scrollTarget="{{$.headerPanel.scroller}}"
+                           runwayFactor="5">
+        <template>
+          <div class="row" layout vertical center>
+          <a href="{{index | getUrl}}" on-click="{{navigate}}">
+            <div >
+              <core-image src="{{model.pic}}" preload sizing="cover">
+              </core-image>
+              <div  >{{model.name}}</div>
+              <div >Rs.{{model.price}}</div>
+            </div>
+          </a>
+        </div>
+        </template>
+      </core-list>
+</div>
+    </div>
+  </core-header-panel>
+
+  </core-drawer-panel>
+  </template>
+  <script>
+  (function() {
+    Polymer({
+      willPrepare: function() {
+        this.super();
+        this.$.list.updateSize()
+      },
+      getUrl: function(idx) {
+        return window.location.pathname + '/' + idx;
+      },
+      closeDrawer: function() {
+        // Maybe this could wait till the next frame before animating
+        // out... right now it animates while the list is rebuilding
+        // and causes some jank
+        this.$.drawerPanel.closeDrawer();
+      }
+    });
+  })();
+  </script>
+</polymer-element>

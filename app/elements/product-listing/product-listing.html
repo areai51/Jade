@@ -1,0 +1,40 @@
+<link rel="import" href="../master-page/master-page.html">
+<!-- <link rel="import" href="/bower_components/core-list/core-list.html"> -->
+
+<polymer-element name="product-listing" extends="master-page"
+                 attributes="contacts heading">
+  <template>
+    <link rel="stylesheet" href="product-listing.css">
+<shadow></shadow>
+<div class="container">
+
+<template repeat="{{product, index in contacts}}">
+<a class="prod-list-item" href="{{index | getUrl}}" on-click="{{navigate}}">
+<core-image src="{{product.pic}}" preload sizing="cover"></core-image>
+<h3>{{product.name}}</h3>
+<h4>Rs.{{product.price}}</h4>
+</a>
+</template>
+
+</div>
+  </template>
+
+
+
+  <script>
+  (function() {
+    Polymer({
+      willPrepare: function() {
+        this.super();
+        this.$.list.updateSize()
+      },
+      getUrl: function(idx) {
+        console.log("url "+window.location.pathname + '/' + idx)
+        return window.location.pathname + '/' + idx;
+
+      }
+
+    });
+  })();
+  </script>
+</polymer-element>
